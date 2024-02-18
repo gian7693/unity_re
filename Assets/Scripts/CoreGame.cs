@@ -9,6 +9,7 @@ public class CoreGame : MonoBehaviour
     public InteractionMenager interactionMenager;
     public GameMenager gameMenager;
     public DoorSystemMenager doorSystemMenager;
+    public SubtitleMenager subtitleMenager;
 
     public void Awake()
     {

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3bdda2b043fe2445a3ef735a8e66bba, type: 3}
   m_Name: 1F MainHall - Dinning Room
   m_EditorClassIdentifier: 
-  isLocked: 0
-  itemRequired: {fileID: 0}
-  isLockedOtherSide: 1
+  isLocked: 1
+  itemRequired: {fileID: 11400000, guid: 3416e2b7a60c65d42afb9c06adb6f962, type: 2}
+  isLockedOtherSide: 0

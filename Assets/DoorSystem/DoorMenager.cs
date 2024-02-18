@@ -66,31 +66,33 @@ public class DoorMenager : MonoBehaviour, IInteractable
     {
         if(doorData.isLocked == true) // SE A PORTA ESTIVER TRANCADA
         {
+            if (doorData.itemRequired != null)
+            {
+                // VERIFICA SE TEM O ITEM
+                string msg = "A porta está trancada, você precisa de algum tipo de chave. ";
+                msg += "\n " + doorData.itemRequired.itemRequiredCaption;
+                CoreGame.core.subtitleMenager.ShowSubtitle(msg);
+
+                return;
+            }
+
             if (doorData.isLockedOtherSide)
             {
                 if (isUnlockedSide)
                 {
                     doorData.isLocked = false;
-                    print("A PORTA FOI DESTRANCADA");
+                    CoreGame.core.subtitleMenager.ShowSubtitle("A porta está trancada");
                     return;
                 }
                 else
                 {
-                    print("PORTA ESTÁ TRANCADA PELO OUTRO LADO");
+                    CoreGame.core.subtitleMenager.ShowSubtitle("porta está trancada pelo outro lado");
                 }
 
                 return;
             }
 
-            if (doorData.itemRequired != null)
-            {
-                // VERIFICA SE TEM O ITEM
-                print("A PORTA ESTÁ TRANCADA, VOCÊ PRECISA DE ALGUM TIPO DE ITEM");
-
-                return;
-            }
-
-            print("A PORTA ESTÁ TRANCADA");
+            CoreGame.core.subtitleMenager.ShowSubtitle("A porta está trancada");
         }
         else // SE A PORTA ESTIVER ABERTA
         {

@@ -12,3 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6635840161e51db4dbbfcb85259ba223, type: 3}
   m_Name: AmorKey
   m_EditorClassIdentifier: 
+  itemName: Armor key
+  itemRequiredCaption: "H\xE1 um simbolo de <color=#FFFF00>armadura</color> entalhado
+    na fechadura"
