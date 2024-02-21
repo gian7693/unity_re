@@ -53,6 +53,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Button North"",
+                    ""type"": ""Button"",
+                    ""id"": ""b40f14d3-56a4-4fe7-8c51-6e8ad033c82d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -165,6 +174,39 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""action"": ""Button South"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d10ed05c-388e-4c89-b24f-99430c37352e"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Button North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cb93e12e-0518-4d94-9893-198178842398"",
+                    ""path"": ""<Keyboard>/tab"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Button North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""62f99941-6f5c-4f84-b0fe-cea5c3d5c651"",
+                    ""path"": ""<Keyboard>/i"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Button North"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -206,6 +248,76 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                     ""isPartOfComposite"": false
                 }
             ]
+        },
+        {
+            ""name"": ""Inventory"",
+            ""id"": ""50c0679d-f302-4bd6-86b5-984e61be58fa"",
+            ""actions"": [
+                {
+                    ""name"": ""Left Shoulder"",
+                    ""type"": ""Button"",
+                    ""id"": ""d1fe9359-eb60-4f48-812b-68d8f5be6659"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Right Shoulder"",
+                    ""type"": ""Button"",
+                    ""id"": ""6201dde1-0195-4e64-8dae-dc2e635893c3"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                }
+            ],
+            ""bindings"": [
+                {
+                    ""name"": """",
+                    ""id"": ""59799801-733c-4266-adbf-49a30d951a7e"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""Left Shoulder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ed1a1550-91d8-4ac5-b372-d6308c94d2d1"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Left Shoulder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""99449e9f-4708-4b1e-ad57-b73f02b3ae28"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Right Shoulder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0c54fa05-f73f-4572-88c9-3c7627604db1"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Right Shoulder"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                }
+            ]
         }
     ],
     ""controlSchemes"": [
@@ -243,9 +355,14 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         m_Input_Axis = m_Input.FindAction("Axis", throwIfNotFound: true);
         m_Input_LeftShoulder = m_Input.FindAction("Left Shoulder", throwIfNotFound: true);
         m_Input_ButtonSouth = m_Input.FindAction("Button South", throwIfNotFound: true);
+        m_Input_ButtonNorth = m_Input.FindAction("Button North", throwIfNotFound: true);
         // Camera
         m_Camera = asset.FindActionMap("Camera", throwIfNotFound: true);
         m_Camera_LookAt = m_Camera.FindAction("LookAt", throwIfNotFound: true);
+        // Inventory
+        m_Inventory = asset.FindActionMap("Inventory", throwIfNotFound: true);
+        m_Inventory_LeftShoulder = m_Inventory.FindAction("Left Shoulder", throwIfNotFound: true);
+        m_Inventory_RightShoulder = m_Inventory.FindAction("Right Shoulder", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -308,6 +425,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Input_Axis;
     private readonly InputAction m_Input_LeftShoulder;
     private readonly InputAction m_Input_ButtonSouth;
+    private readonly InputAction m_Input_ButtonNorth;
     public struct InputActions
     {
         private @Controls m_Wrapper;
@@ -315,6 +433,7 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         public InputAction @Axis => m_Wrapper.m_Input_Axis;
         public InputAction @LeftShoulder => m_Wrapper.m_Input_LeftShoulder;
         public InputAction @ButtonSouth => m_Wrapper.m_Input_ButtonSouth;
+        public InputAction @ButtonNorth => m_Wrapper.m_Input_ButtonNorth;
         public InputActionMap Get() { return m_Wrapper.m_Input; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -333,6 +452,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @ButtonSouth.started -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonSouth;
                 @ButtonSouth.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonSouth;
                 @ButtonSouth.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonSouth;
+                @ButtonNorth.started -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonNorth;
+                @ButtonNorth.performed -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonNorth;
+                @ButtonNorth.canceled -= m_Wrapper.m_InputActionsCallbackInterface.OnButtonNorth;
             }
             m_Wrapper.m_InputActionsCallbackInterface = instance;
             if (instance != null)
@@ -346,6 +468,9 @@ public partial class @Controls : IInputActionCollection2, IDisposable
                 @ButtonSouth.started += instance.OnButtonSouth;
                 @ButtonSouth.performed += instance.OnButtonSouth;
                 @ButtonSouth.canceled += instance.OnButtonSouth;
+                @ButtonNorth.started += instance.OnButtonNorth;
+                @ButtonNorth.performed += instance.OnButtonNorth;
+                @ButtonNorth.canceled += instance.OnButtonNorth;
             }
         }
     }
@@ -383,6 +508,47 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         }
     }
     public CameraActions @Camera => new CameraActions(this);
+
+    // Inventory
+    private readonly InputActionMap m_Inventory;
+    private IInventoryActions m_InventoryActionsCallbackInterface;
+    private readonly InputAction m_Inventory_LeftShoulder;
+    private readonly InputAction m_Inventory_RightShoulder;
+    public struct InventoryActions
+    {
+        private @Controls m_Wrapper;
+        public InventoryActions(@Controls wrapper) { m_Wrapper = wrapper; }
+        public InputAction @LeftShoulder => m_Wrapper.m_Inventory_LeftShoulder;
+        public InputAction @RightShoulder => m_Wrapper.m_Inventory_RightShoulder;
+        public InputActionMap Get() { return m_Wrapper.m_Inventory; }
+        public void Enable() { Get().Enable(); }
+        public void Disable() { Get().Disable(); }
+        public bool enabled => Get().enabled;
+        public static implicit operator InputActionMap(InventoryActions set) { return set.Get(); }
+        public void SetCallbacks(IInventoryActions instance)
+        {
+            if (m_Wrapper.m_InventoryActionsCallbackInterface != null)
+            {
+                @LeftShoulder.started -= m_Wrapper.m_InventoryActionsCallbackInterface.OnLeftShoulder;
+                @LeftShoulder.performed -= m_Wrapper.m_InventoryActionsCallbackInterface.OnLeftShoulder;
+                @LeftShoulder.canceled -= m_Wrapper.m_InventoryActionsCallbackInterface.OnLeftShoulder;
+                @RightShoulder.started -= m_Wrapper.m_InventoryActionsCallbackInterface.OnRightShoulder;
+                @RightShoulder.performed -= m_Wrapper.m_InventoryActionsCallbackInterface.OnRightShoulder;
+                @RightShoulder.canceled -= m_Wrapper.m_InventoryActionsCallbackInterface.OnRightShoulder;
+            }
+            m_Wrapper.m_InventoryActionsCallbackInterface = instance;
+            if (instance != null)
+            {
+                @LeftShoulder.started += instance.OnLeftShoulder;
+                @LeftShoulder.performed += instance.OnLeftShoulder;
+                @LeftShoulder.canceled += instance.OnLeftShoulder;
+                @RightShoulder.started += instance.OnRightShoulder;
+                @RightShoulder.performed += instance.OnRightShoulder;
+                @RightShoulder.canceled += instance.OnRightShoulder;
+            }
+        }
+    }
+    public InventoryActions @Inventory => new InventoryActions(this);
     private int m_KeyboardSchemeIndex = -1;
     public InputControlScheme KeyboardScheme
     {
@@ -406,9 +572,15 @@ public partial class @Controls : IInputActionCollection2, IDisposable
         void OnAxis(InputAction.CallbackContext context);
         void OnLeftShoulder(InputAction.CallbackContext context);
         void OnButtonSouth(InputAction.CallbackContext context);
+        void OnButtonNorth(InputAction.CallbackContext context);
     }
     public interface ICameraActions
     {
         void OnLookAt(InputAction.CallbackContext context);
+    }
+    public interface IInventoryActions
+    {
+        void OnLeftShoulder(InputAction.CallbackContext context);
+        void OnRightShoulder(InputAction.CallbackContext context);
     }
 }

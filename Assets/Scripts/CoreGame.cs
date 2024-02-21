@@ -10,6 +10,7 @@ public class CoreGame : MonoBehaviour
     public GameMenager gameMenager;
     public DoorSystemMenager doorSystemMenager;
     public SubtitleMenager subtitleMenager;
+    public InventoryMenager inventoryMenager;
 
     public void Awake()
     {

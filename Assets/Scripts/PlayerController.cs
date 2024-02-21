@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
@@ -38,6 +39,12 @@ public class PlayerController : MonoBehaviour
         InputMenager.Instance.control.Input.LeftShoulder.canceled += OnLeftShoulder;
 
         CoreGame.core.gameMenager.PlayerRegister(this.transform);
+    }
+
+    public void OnDisable()
+    {
+        InputMenager.Instance.control.Input.LeftShoulder.started -= OnLeftShoulder;
+        InputMenager.Instance.control.Input.LeftShoulder.canceled -= OnLeftShoulder;
     }
 
     // Update is called once per frame
